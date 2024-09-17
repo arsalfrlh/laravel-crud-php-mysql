@@ -64,3 +64,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+membuat project laravel
+composer global require laravel/installer =>untuk menginstall laravel<=
+cd/xampp/htdocs =>membuka folder htdocs<=
+laravel new example-app =>membuat project laravel dengan nama folder<=
+cd/xampp/htdocs/example-app =>membuka folder project<=
+php artisan serve =>untuk menjalankan server<=
+php artisan make:controller ExampleController --resource =>untuk membuat controller dan resource sudah di siapkan pada laravel<=
+php artisan make:model ExampleModel -m =>membuat database dan model dan migration pada laravel<=
