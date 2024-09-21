@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\mahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('pegawai',PegawaiController::class);
+//nama urlnya mahasiswa dan mengakses mahasiswaController
+Route::resource('mahasiswa',mahasiswaController::class);
