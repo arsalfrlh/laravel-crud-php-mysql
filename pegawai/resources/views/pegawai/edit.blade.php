@@ -8,11 +8,21 @@
 </head>
 <body>
     <h1>Tambah Pegawai</h1>
-    <form action="/pegawai/update" method="post">
+    <form action="/pegawai/update" method="post" enctype="multipart/form-data">
         @csrf <!-- Token keamanan laravel-->
         @method('PUT') <!-- method untuk update data -->
         @foreach ($edit as $pegawai)
     <table>
+        <tr>
+            <td>
+                @if ($pegawai->gambar)
+                <img src="{{ asset('images/'.$pegawai->gambar) }}" width="80px"> <!-- menampilkan gambar dari folder "public/images/"|nama gambar dari database -->
+                @else
+                <img src="{{ asset('images/img.jpeg') }}" width="80px"> <!-- menampilkan gambar dari folder "public/images/img.jpeg" -->
+                @endif
+            </td>
+            <td><input type="file" name="gambar"></td>
+        </tr>
         <tr>
             <td>Nama</td>
             <td><input type="hidden" name="id" value="{{ $pegawai->id_pegawai }}"><input type="text" name="nama" value="{{ $pegawai->nama }}" required></td>

@@ -12,6 +12,7 @@
     <table border="1">
         <tr>
             <th>Nama</th>
+            <th>Gambar</th>
             <th>Jabatan</th>
             <th>Umur</th>
             <th>Alamat</th>
@@ -19,6 +20,13 @@
         </tr>
         @foreach ($tampil as $pegawai) <!-- memanggil data yg di simpan ke array tadi dari controller -->
         <tr>
+            <td>
+                @if ($pegawai->gambar)
+                <img src="{{ asset('images/'.$pegawai->gambar) }}" width="80px"> <!-- menampilkan gambar dari folder "public/images/"|nama gambar dari database -->
+                @else
+                <img src="{{ asset('images/img.jpeg') }}" width="80px"> <!-- menampilkan gambar dari folder "public/images/img.jpeg" -->
+                @endif
+            </td>
             <td>{{ $pegawai->nama }}</td>
             <td>{{ $pegawai->jabatan }}</td>
             <td>{{ $pegawai->umur }}</td>

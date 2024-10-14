@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Okt 2024 pada 13.51
+-- Waktu pembuatan: 14 Okt 2024 pada 06.08
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.0.28
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_pegawai` (
   `id_pegawai` int(11) NOT NULL,
+  `gambar` varchar(225) DEFAULT NULL,
   `nama` varchar(30) NOT NULL,
   `jabatan` varchar(30) NOT NULL,
   `umur` int(11) NOT NULL,
@@ -39,10 +40,10 @@ CREATE TABLE `tbl_pegawai` (
 -- Dumping data untuk tabel `tbl_pegawai`
 --
 
-INSERT INTO `tbl_pegawai` (`id_pegawai`, `nama`, `jabatan`, `umur`, `alamat`) VALUES
-(1, 'Kwanza', 'Backend Programmer', 19, 'Isekai'),
-(2, 'Arsal', 'Frontend Programmer', 19, 'Isekai'),
-(3, 'Arsal Fahrulloh', 'Manager', 19, 'Isekai');
+INSERT INTO `tbl_pegawai` (`id_pegawai`, `gambar`, `nama`, `jabatan`, `umur`, `alamat`) VALUES
+(1, NULL, 'Kwanza', 'Backend Programmer', 19, 'Isekai'),
+(2, NULL, 'Arsal', 'Frontend Programmer', 19, 'Isekai'),
+(13, '1728878887_10.png', 'test', 'test', 20, 'Isekai');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `tbl_pegawai`
 -- AUTO_INCREMENT untuk tabel `tbl_pegawai`
 --
 ALTER TABLE `tbl_pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

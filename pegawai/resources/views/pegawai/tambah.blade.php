@@ -8,9 +8,13 @@
 </head>
 <body>
     <h1>Tambah Pegawai</h1>
-    <form action="/pegawai/store" method="post"> <!-- mengarahkan ke url /pegawai/store di file (web.php) -->
+    <form action="/pegawai/store" method="post" enctype="multipart/form-data"> <!-- mengarahkan ke url /pegawai/store di file (web.php) -->
         @csrf <!-- token keamanan laravel -->
     <table>
+        <tr>
+            <td>Gambar</td>
+            <td><input type="file" name="gambar" required></td>
+        </tr>
         <tr>
             <td>Nama</td>
             <td><input type="text" name="nama" required></td>
