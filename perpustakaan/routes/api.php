@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BukuApiController;
+use App\Http\Controllers\SessionApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//route untuk mengambil data user dari token
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/perpus/register',[SessionApiController::class,'register']);
+Route::post('/perpus/login',[SessionApiController::class,'login']);
+
 Route::get('/perpus/buku',[BukuApiController::class,'index']);
 Route::post('/perpus/buku/tambah',[BukuApiController::class,'create_buku']);
 Route::get('/perpus/buku/edit/{id}',[BukuApiController::class,'edit_buku']);
